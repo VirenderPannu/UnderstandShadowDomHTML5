@@ -1,0 +1,13 @@
+      <script>
+        class MyElement extends HTMLElement {
+          connectedCallback() {
+            const button = document.createElement("button");
+            button.onclick = () => alert("Button clicked");
+            button.innerText = "Button in Custom Element";
+            this.append(button);
+          }
+        }
+        customElements.define("my-element", MyElement);
+      </script>
+
+      <div><my-element></my-element></div>

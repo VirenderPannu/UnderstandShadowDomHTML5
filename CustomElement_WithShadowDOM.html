@@ -1,0 +1,15 @@
+      <script>
+        class MyElement extends HTMLElement {
+          // Called every time the element is inserted into the DOM.
+          connectedCallback() {
+            const shadow = this.attachShadow({ mode: "closed" });
+            const button = document.createElement("button");
+            button.onclick = () => alert("Button clicked");
+            button.innerText = "Shadow DOM Button";
+            shadow.append(button);
+          }
+        }
+        customElements.define("my-element", MyElement);
+      </script>
+      <div><my-element></my-element></div>
+
